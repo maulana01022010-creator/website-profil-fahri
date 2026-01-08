@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional - Fahri Maulana</title>
+    <title> Website-Fahri-Maulana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary-blue: #007bff;
             --light-blue: #00bfff;
             --dark-bg: #0a0e14;
             --card-bg: rgba(255, 255, 255, 0.05);
+            --tiktok-color: #010101;
+            --game-green: #28a745;
         }
 
         body {
@@ -54,42 +57,27 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             width: 100%;
-            display: block;
+            display: flex; /* Menggunakan flexbox untuk merapikan ikon */
+            align-items: center;
+            justify-content: center;
             box-sizing: border-box;
-        }
-
-        .btn-primary { background: var(--primary-blue); color: white; border: none; margin-bottom: 10px; }
-        .btn-primary:hover { background: #0056b3; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,123,255,0.4); }
-
-        /* Area Toko Lynk.id Besar */
-        .store-section {
-            margin-top: 30px;
-            padding: 30px 20px;
-            background: var(--card-bg);
-            border-radius: 25px;
-            border: 1px solid rgba(0, 191, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .store-icon { 
-            width: 120px; /* Diperbesar sesuai permintaan */
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        .btn-store {
-            background: linear-gradient(45deg, var(--light-blue), #007bff);
-            color: white;
             border: none;
-            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
-        .btn-store:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6); }
+
+        .btn i {
+            margin-right: 12px; /* Jarak antara ikon dan teks */
+            font-size: 18px;
+        }
+
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        .btn-profile { background: var(--primary-blue); color: white; }
+        .btn-tiktok { background: var(--tiktok-color); color: white; border: 1px solid #ffffff33; }
+        .btn-lynk { background: #ffffff; color: #000000; } /* Lynk.id biasanya dominan putih/terang */
+        .btn-game { background: var(--game-green); color: white; }
 
         .card {
             background: var(--card-bg);
@@ -98,14 +86,8 @@
             text-align: left;
             border-left: 4px solid var(--primary-blue);
         }
-        .card p { margin: 15px 0; font-size: 15px; line-height: 1.5; }
         
-        .btn-back {
-            background: transparent;
-            color: #8892b0;
-            border: 1px solid #8892b0;
-            margin-top: 20px;
-        }
+        .btn-back { background: transparent; color: #8892b0; border: 1px solid #8892b0; margin-top: 20px; width: auto; display: inline-block; padding: 10px 25px; }
     </style>
 </head>
 <body>
@@ -115,26 +97,36 @@
         <div id="layout-profil">
             <img src="fahri.webp" alt="Fahri Maulana" class="profile-img">
             <h1>Fahri Maulana</h1>
-            <p class="subtitle">"Pelajar Suka Coding Dan Design"</p>
-            <p class="subtitle">Bila Ada Yang Minat Dengan Produk Digital Saya Bisa Kunjungi Toko Sekarang</p>
-            
-            <div class="btn-group">
-                <button class="btn btn-primary" onclick="tampilLayout('layout-portofolio')">Buka Profile Lengkap</button>
-            </div>
+            <p class="subtitle">"Berhenti Belajar adalah Awal dari Kekalahan"</p>
+            <p class="subtitle">Ayo Belajar Dan Temukan Pengalaman Baru, Kamu Bisa Cek di Toko Saya Ada berbagai E-book Dan Template POSTER,PPT,MAKALAH, Siap Pakai Yang Tentunya Membantu Anda Dalam Pekerjaan Atau Tugas Sekolah</p>
 
-            <div class="store-section">
-                <button class="btn btn-store" onclick="bukaToko()">🛒 KUNJUNGI TOKO SEKARANG</button>
+            <div class="btn-group">
+                <button class="btn btn-profile" onclick="tampilLayout('layout-portofolio')">
+                <i class="fa-solid fa-user-circle"></i> PROFILE
+                </button>
+                
+                <button class="btn btn-tiktok" onclick="window.open('https://tiktok.com/@serba.digitall', '_blank')">
+                 <i class="fa-brands fa-tiktok"></i> AKUN TIKTOK
+                </button>
+                
+                <button class="btn btn-lynk" onclick="window.open('https://lynk.id/hidayatull', '_blank')">
+                <i class="fa-solid fa-shop"></i>    TOKO NYA
+                </button>
+
+                <button class="btn btn-game" onclick="window.location.href='game.html'">
+                    <i class="fa-solid fa-gamepad"></i> GAME KONSENTRSI 
+                </button>
             </div>
         </div>
 
         <div id="layout-portofolio" style="display: none;">
-            <h2 style="margin-bottom: 25px; color: var(--light-blue);">Identity & Story</h2>
+            <h2 style="margin-bottom: 25px; color: var(--light-blue);">IDENTITAS</h2>
             <div class="card">
-                <p> <b>Asal:</b> Garut, Jawa Barat</p>
-                <p> <b>Hobi:</b> Coding, Gamer, Futsal</p>
-                <p> <b>Cita-Cita:</b> Teknik Sipil (Civil Engineering)</p>
-                <p> <b>Design:</b> SketchUp, AutoCAD, Canva</p>
-                <p> <b>Coding:</b> Visual Studio Code & GitHub</p>
+                <p> <b>NAMA:</b> FAHRI MAULANA</p>
+                <p> <b>STATUS:</b> PELAJAR </p>
+                <p> <b>HOBI:</b> DESIGN DAN CODING</p>
+                <p> <b>BUSINESS:</b> MENJUAL PRUDUK DIGITAL SEPERTI TEMPLATE POSTER,MAKALAH,PPT, DAN EBOOK</p>
+                <p> "Yang Tentunya Produk Digital Saya Bisa Membantu Pekerjaan Dan Tugas Sekolah"</p>
             </div>
             <button class="btn btn-back" onclick="tampilLayout('layout-profil')">Kembali</button>
         </div>
@@ -146,10 +138,6 @@
             document.getElementById('layout-profil').style.display = 'none';
             document.getElementById('layout-portofolio').style.display = 'none';
             document.getElementById(id).style.display = 'block';
-        }
-
-        function bukaToko() {
-            window.open("https://lynk.id/hidayatull", "_blank");
         }
     </script>
 </body>
