@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Fahri - Pro Edition</title>
+    <style>
+        /* Efek animasi muncul pelan */
+        .animasi-muncul {
+            animation: fadeIn 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #000000, #001f3f); color: white; text-align: center; padding-top: 50px; font-family: sans-serif; min-height: 100vh; margin: 0;">
+
+    <div id="layout-profil" class="animasi-muncul">
+        <h1 style="color: #007bff; text-shadow: 2px 2px 10px rgba(0,123,255,0.5);">PROFIL SAYA</h1>
+        <img src="fahri.webp" width="150" style="border-radius: 50%; border: 4px solid #007bff; margin: 20px 0; box-shadow: 0 0 20px #007bff;">
+        <h2 style="margin: 0;">Fahri Maulana</h2>
+        <p style="color: #cccccc; font-style: italic;">"Pelajar Coding dari Infinix GT 20 Pro ke ASUS TUF"</p>
+        <button onclick="pindahLayout()" style="background-color: #007bff; color: white; padding: 12px 25px; border-radius: 8px; cursor: pointer; border: none; font-weight: bold; margin-top: 20px; transition: 0.3s;">Lihat Portofolio</button>
+    </div>
+
+    <div id="layout-portofolio" style="display: none; background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 80%; max-width: 400px; margin: auto; border: 1px solid #007bff; box-shadow: 0 0 30px rgba(0,123,255,0.2);" class="animasi-muncul">
+        <h2 style="color: #007bff;">PORTOFOLIO FAHRI</h2>
+        <hr style="border: 0.5px solid #333;">
+        <div style="text-align: left; display: inline-block; line-height: 1.8;">
+            <p>⚽ <b>Hobi:</b> Coding, Gaming, & Futsal</p>
+            <p>📍 <b>Asal:</b> Garut, Jawa Barat</p>
+            <p>🏗️ <b>Cita-cita:</b> Civil Engineering & Atlet Futsal</p>
+            <p>📱 <b>Device:</b> ASUS TUF & Infinix GT 20 Pro</p>
+        </div>
+        <br>
+        <button onclick="kembaliProfil()" style="background-color: #555; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; border: none; margin-top: 20px;">Kembali</button>
+    </div>
+
+    <script>
+        function pindahLayout() {
+            document.getElementById('layout-profil').style.display = 'none';
+            document.getElementById('layout-portofolio').style.display = 'block';
+        }
+        function kembaliProfil() {
+            document.getElementById('layout-profil').style.display = 'block';
+            document.getElementById('layout-portofolio').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
