@@ -1,54 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Fahri - Pro Edition</title>
+    <title>Portofolio Profesional - Fahri Maulana</title>
     <style>
-        /* Efek animasi muncul pelan */
-        .animasi-muncul {
-            animation: fadeIn 0.8s;
+        :root {
+            --primary-blue: #007bff;
+            --light-blue: #00bfff;
+            --dark-bg: #0a0e14;
+            --card-bg: rgba(255, 255, 255, 0.05);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        body {
+            background: radial-gradient(circle at top, #111b27 0%, var(--dark-bg) 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .animasi-fade { animation: fadeIn 1s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-blue);
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 { font-size: 26px; margin: 10px 0; letter-spacing: 1px; }
+        .subtitle { color: #8892b0; font-size: 14px; margin-bottom: 25px; font-style: italic; }
+
+        .btn {
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .btn-primary { background: var(--primary-blue); color: white; border: none; margin-bottom: 10px; }
+        .btn-primary:hover { background: #0056b3; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,123,255,0.4); }
+
+        /* Area Toko Lynk.id Besar */
+        .store-section {
+            margin-top: 30px;
+            padding: 30px 20px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .store-icon { 
+            width: 120px; /* Diperbesar sesuai permintaan */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn-store {
+            background: linear-gradient(45deg, var(--light-blue), #007bff);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-store:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0, 191, 255, 0.6); }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .card p { margin: 15px 0; font-size: 15px; line-height: 1.5; }
+        
+        .btn-back {
+            background: transparent;
+            color: #8892b0;
+            border: 1px solid #8892b0;
+            margin-top: 20px;
         }
     </style>
 </head>
-<body style="background: linear-gradient(135deg, #000000, #001f3f); color: white; text-align: center; padding-top: 50px; font-family: sans-serif; min-height: 100vh; margin: 0;">
+<body>
 
-    <div id="layout-profil" class="animasi-muncul">
-        <h1 style="color: #007bff; text-shadow: 2px 2px 10px rgba(0,123,255,0.5);">PROFIL SAYA</h1>
-        <img src="fahri.webp" width="150" style="border-radius: 50%; border: 4px solid #007bff; margin: 20px 0; box-shadow: 0 0 20px #007bff;">
-        <h2 style="margin: 0;">Fahri Maulana</h2>
-        <p style="color: #cccccc; font-style: italic;">"Pelajar Yang Hobi Coding"</p>
-        <button onclick="pindahLayout()" style="background-color: #007bff; color: white; padding: 12px 25px; border-radius: 8px; cursor: pointer; border: none; font-weight: bold; margin-top: 20px; transition: 0.3s;">Lihat Portofolio</button>
-    </div>
+    <div class="container animasi-fade">
+        
+        <div id="layout-profil">
+            <img src="fahri.webp" alt="Fahri Maulana" class="profile-img">
+            <h1>Fahri Maulana</h1>
+            <p class="subtitle">"Pelajar Suka Coding Dan Design"</p>
+            <p class="subtitle">Bila Ada Yang Minat Dengan Produk Digital Saya Bisa Kunjungi Toko Sekarang</p>
+            
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="tampilLayout('layout-portofolio')">Buka Profile Lengkap</button>
+            </div>
 
-    <div id="layout-portofolio" style="display: none; background: rgba(26, 26, 26, 0.9); padding: 30px; border-radius: 15px; width: 80%; max-width: 400px; margin: auto; border: 1px solid #007bff; box-shadow: 0 0 30px rgba(0,123,255,0.2);" class="animasi-muncul">
-        <h2 style="color: #007bff;">PORTOFOLIO FAHRI</h2>
-        <hr style="border: 0.5px solid #333;">
-        <div style="text-align: left; display: inline-block; line-height: 1.8;">
-            <p> <b>Hobi:</b> Coding, Gaming, & Futsal</p>
-            <p> <b>Asal:</b> Garut, Jawa Barat</p>
-            <p> <b>Cita-cita:</b> Civil Engineering & Atlet Futsal</p>
-            <p> <b>Device:</b> ASUS TUF & Infinix GT 20 Pro</p>
+            <div class="store-section">
+                <button class="btn btn-store" onclick="bukaToko()">🛒 KUNJUNGI TOKO SEKARANG</button>
+            </div>
         </div>
-        <br>
-        <button onclick="kembaliProfil()" style="background-color: #555; color: white; padding: 10px 20px; border-radius: 8px; cursor: pointer; border: none; margin-top: 20px;">Kembali</button>
+
+        <div id="layout-portofolio" style="display: none;">
+            <h2 style="margin-bottom: 25px; color: var(--light-blue);">Identity & Story</h2>
+            <div class="card">
+                <p> <b>Asal:</b> Garut, Jawa Barat</p>
+                <p> <b>Hobi:</b> Coding, Gamer, Futsal</p>
+                <p> <b>Cita-Cita:</b> Teknik Sipil (Civil Engineering)</p>
+                <p> <b>Design:</b> SketchUp, AutoCAD, Canva</p>
+                <p> <b>Coding:</b> Visual Studio Code & GitHub</p>
+            </div>
+            <button class="btn btn-back" onclick="tampilLayout('layout-profil')">Kembali</button>
+        </div>
+
     </div>
 
     <script>
-        function pindahLayout() {
+        function tampilLayout(id) {
             document.getElementById('layout-profil').style.display = 'none';
-            document.getElementById('layout-portofolio').style.display = 'block';
-        }
-        function kembaliProfil() {
-            document.getElementById('layout-profil').style.display = 'block';
             document.getElementById('layout-portofolio').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function bukaToko() {
+            window.open("https://lynk.id/hidayatull", "_blank");
         }
     </script>
-
 </body>
 </html>
